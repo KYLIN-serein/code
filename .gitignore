@@ -1,2 +1,4 @@
-sum
 *.out
+*.exe
+sum
+calculator
