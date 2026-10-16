@@ -4,7 +4,23 @@
         <meta charset="UTF-8">
         <title>我的第一个网页</title>
         <style>
-    body { background-color: #f0f0f0; }
+    body { background-color: #f4f4f9; 
+        font-family: "Microsoft YaHei",sans-serif;
+    }
+
+    .card {
+        background-color: white;
+        width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin: 50px auto;
+    }
+
+    .highlight {
+        color: red;
+        font-weight: bold;
+    }
     h1 { color: blue; }
 </style>
     </head>
@@ -22,5 +38,15 @@
         <tr><th>科目</th><th>成绩</th></tr>
         <tr><td>C语言</td><td>95</td></tr>
     </table>
+    <div class="card">
+        <h2>我的大一学习计划</h2>
+        <p>目标：大一顺利进入蓝桥杯集训队，并保持前端课程优秀。</p>
+
+        <ul>
+            <li class="highlight">每天刷一道C语言算法题。</li>
+            <li>每周写一篇Markdown笔记</li>
+            <li>每天坚持Git提交</li>
+        </ul>
+    </div>
     </body>
 </html>
