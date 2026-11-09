@@ -11,6 +11,15 @@ int main(){
     int count = 0; 
     int choice;
 
+    FILE *fp = fopen("contact.txt","r");
+    if(fp != NULL ){
+        while(fscanf(fp,"%s %d",book[count].name,&book[count].age) != EOF){
+            count++;
+        }
+        fclose(fp);
+        printf("成功加载了 %d 个联系人数据！\n", count);
+    } 
+
      while (1) {
         printf("\n===== 通讯录 V2.0 =====\n");
         printf("1. 添加联系人\n");
@@ -58,12 +67,21 @@ int main(){
             break;
 
         case 0: 
-            printf("已退出系统，再见！\n");
+        FILE *fout = fopen("contact.txt","w");
+        if(fout != NULL){
+            for (int i = 0; i < count; i++) {
+                    fprintf(fout, "%s %d\n", book[i].name, book[i].age);
+            }
+        fclose(fout);
+        printf("数据已成功保存到硬盘！\n");
+        }
+        printf("已退出系统，再见！\n");
             return 0;
 
             default:
                 printf("输入无效，请重新选择！\n");
-        }
+        
     }
+}
     return 0;
 }
